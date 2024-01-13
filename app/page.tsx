@@ -1,7 +1,11 @@
+'use client'
+
+import Navbar from "@/components/Navbar"
+
 export default function Home() {
   return (
-    <main className="text-green-500">
-      <h1>Sankalp KAdam</h1>
+    <main className="">
+      <Navbar/>
     </main>
   )
 }
