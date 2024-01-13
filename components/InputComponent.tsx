@@ -1,3 +1,4 @@
+
 import React from "react";
 
 interface Inputprops{
@@ -13,13 +14,13 @@ const InputComponent: React.FC<Inputprops> = ({
     return (
         <div className="relative">
 
-            <input id={id} type={type} onChange={onChange} className="
-        block
+            <input id={id} type={type} onChange={onChange} className="block
         rounded-md
         text-md
         text-white
         px-6
         pt-6
+        pb-1
         w-full
         bg-neutral-700
         appreance-none
@@ -45,7 +46,7 @@ const InputComponent: React.FC<Inputprops> = ({
                 peer-placeholder-shown:translate-y-0
                 peer-focus:scale-75
                 peer-focus: -translate-y-3
-                ">Email</label>
+                ">{label}</label>
         </div>
     )
 }
