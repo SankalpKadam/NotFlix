@@ -1,4 +1,5 @@
 import React from 'react'
+import FavoriteButton from './FavoriteButton';
 interface MovieCardProps {
     data: Record<string, any>;
 }
@@ -20,6 +21,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                             play
                             {/*insert play icon */}
                         </div>
+                        <FavoriteButton movieId={data.id}/>
                     </div>
                     <p className='text-green-400 font-semibold mt-4'>New <span className='text-white '>2023</span></p>
                     <div className='flex flex-row mt-4 gap-2 items-center'>
