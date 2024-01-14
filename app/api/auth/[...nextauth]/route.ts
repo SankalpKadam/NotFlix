@@ -2,9 +2,14 @@ import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
 import prismadb from '@/lib/prismadb';
 import {compare} from 'bcrypt';
-
+import Google from "next-auth/providers/google";
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 const handler =  NextAuth({
     providers:[
+        Google({
+            clientId:process.env.GOOGLE_CLIENT_ID || '',
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+        }),
         Credentials({
             id:'credentials',
             name:'Credentials',
@@ -46,6 +51,7 @@ const handler =  NextAuth({
         signIn:'/auth',
     },
     debug:process.env.NODE_ENV === "development",
+    adapter:PrismaAdapter(prismadb),
     session:{
         strategy: 'jwt',
     },
