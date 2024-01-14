@@ -24,6 +24,7 @@ function auth() {
             await axios.post('/api/register', {
                 email, userName, password
             })
+            login();
         } catch (error) {
             console.log(error);
 
