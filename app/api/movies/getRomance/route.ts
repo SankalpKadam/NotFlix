@@ -8,7 +8,7 @@ import { NextResponse } from "next/server";
 export async function GET(request: Request) {
     try {
         
-        const result= await instance.get(requests.fetchTrending);
+        const result= await instance.get(requests.fetchRomanceMovies);
         return NextResponse.json(result.data.results)
     } catch (error) {
         console.log(error);

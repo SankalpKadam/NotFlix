@@ -1,7 +1,7 @@
 'use client'
 import InputComponent from "@/components/InputComponent";
 import React, { useCallback, useState } from "react";
-
+import axios from "axios";
 function auth() {
     //setting the initial states
     const [email, setEmail] = useState("");
@@ -16,6 +16,16 @@ function auth() {
         )
     },[screen]);
 
+    const register = useCallback(async () => {
+        try {
+            await axios.post('/api/register', {
+                email, userName, password
+            })
+        } catch (error) {
+            console.log(error);
+            
+        }
+    },[])
     return (
         <div className="relative bg-[url('/images/hero.jpg')] bg-no-repeat bg-fixed bg-cover h-full w-full">
             <div className="bg-black  lg:bg-opacity-50 w-full h-full">
@@ -37,7 +47,7 @@ function auth() {
                              <InputComponent id="pass" label="Password" onChange={(e:any) => setPassword(e.target.value)}
                              value={password} type="password"/>
                         </div>
-                        <button className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
+                        <button onClick={register}className="bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition">
                             {screen === 'login'?"Login" : "Register"}
                         </button>
                         <p className="text-neutral-500 mt-12">{screen === 'login'?"Is this your first time using Netflix?" : "Already have an account?"} <span onClick={changeScreen}className="text-white ml-1 hover:underline cursor-pointer"> {screen === 'login'?"Create an account" : " Login"}</span></p>
