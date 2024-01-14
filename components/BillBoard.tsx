@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import PlayButton from './PlayButton';
 import useInfoModal from '@/hooks/useInfoModal';
-
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 const BillBoard = () => {
     const data = {
         "id":"1",
@@ -34,7 +34,7 @@ const {openModal} = useInfoModal();
                 <div className='flex flex-row items-center mt-3 md:mt-4 gap-3'>
                     <PlayButton movieId={data?.id}/>
                     <button className='bg-white
-                    text-white bg-opacity-30 rounded py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg: text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition' onClick={handleOpenModal}>{/*Add more info icon mr-1 */}More Info</button>
+                    text-white bg-opacity-30 rounded py-1 md:py-2 px-2 md:px-4 w-auto text-xs lg: text-lg font-semibold flex flex-row items-center hover:bg-opacity-20 transition' onClick={handleOpenModal}><InfoOutlinedIcon className='mr-1 w-4 md:w-7 '/>More Info</button>
                 </div>
             </div>
         </div>

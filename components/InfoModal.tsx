@@ -2,7 +2,7 @@ import useInfoModal from '@/hooks/useInfoModal';
 import React, { useCallback, useEffect, useState } from 'react'
 import PlayButton from './PlayButton';
 import FavoriteButton from './FavoriteButton';
-
+import CloseIcon from '@mui/icons-material/Close';
 interface InfoModalProps {
     visible?: boolean;
     onClose?: any;
@@ -40,7 +40,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
                     <div className='relative h-96'>
                         <video className='w-full brigtness-[60%] object-cover h-full' autoPlay muted loop poster={data?.thumbnailUrl} src={data?.videoUrl}></video>
                         <div onClick={handleClose} className='cursor-pointer absolute top-3 right-4 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center'>
-                            X{/*close icon with text-white */}
+                            <CloseIcon className='text-white' fontSize='large'/>
                         </div>
                         <div className='absolute bottom-[10%] left-10'>
                             <p className='text-white text-3xl md:text-4xl h-full lg:text-5xl font-bold mb-8'>
