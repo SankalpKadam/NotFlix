@@ -41,7 +41,41 @@ const MovieList:React.FC<MovieListProps> = ({title})=> {
         "thumbnailUrl":"https://download.blender.org/ED/cover.jpg",
         "genre":"Sci-Fi",
         "duration":"15 minutes"
-     }]
+     },{
+      "id":5,
+      "title":"Big Buck Bunny",
+      "description":"Three rodents amuse themselves by harassing creatures of the forest. However, when they mess with a bunny, he decides to teach them a lesson.",
+      "videoUrl":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "thumbnailUrl":"https://upload.wikimedia.org/wikipedia/commons/7/70/Big.Buck.Bunny.-.Opening.Screen.png",
+      "genre":"Comedy",
+      "duration":"10 minutes"
+   },
+   {
+      "id":6,
+      "title":"Sintel",
+      "description":"A lonely young woman, Sintel, helps and befriends a dragon, whom she calls Scales. But when he is kidnapped by an adult dragon, Sintel decides to embark on a dangerous quest to find her lost friend Scales.",
+      "videoUrl":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "thumbnailUrl":"http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg",
+      "genre":"Adventure",
+      "duration":"15 minutes"
+   },{
+    "id":7,
+    "title":"Big Buck Bunny",
+    "description":"Three rodents amuse themselves by harassing creatures of the forest. However, when they mess with a bunny, he decides to teach them a lesson.",
+    "videoUrl":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnailUrl":"https://upload.wikimedia.org/wikipedia/commons/7/70/Big.Buck.Bunny.-.Opening.Screen.png",
+    "genre":"Comedy",
+    "duration":"10 minutes"
+ },
+ {
+    "id":8,
+    "title":"Sintel",
+    "description":"A lonely young woman, Sintel, helps and befriends a dragon, whom she calls Scales. But when he is kidnapped by an adult dragon, Sintel decides to embark on a dangerous quest to find her lost friend Scales.",
+    "videoUrl":"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    "thumbnailUrl":"http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg",
+    "genre":"Adventure",
+    "duration":"15 minutes"
+ }]
      if (isEmpty(movieList)) {
          return null;
      }
@@ -51,13 +85,29 @@ const MovieList:React.FC<MovieListProps> = ({title})=> {
         <p className='text-white text-md md:text-xl lg:text-2xl font-semibold'>
             {title}
         </p>
-        <div className='grid grid-cols-4 gap-2'>
+        <div className='flex flex-row flex-nowrap overflow-x-auto no-scrollbar'>
             {
                 movieList.map((movie)=>(
                     <MovieCard key={movie.id} data={movie}/>
                 ))
             }
+            {/* <div className='w-1/4 h-1/2 bg-white text-black flex-shrink-0'>
+asdas
+            </div>
+            <div className='w-1/4 h-1/2 bg-white text-black flex-shrink-0'>
+asdas
+            </div>
+            <div className='w-1/4 h-1/2 bg-white text-black flex-shrink-0'>
+asdas
+            </div>
+            <div className='w-1/4 h-1/2 bg-white text-black flex-shrink-0'>
+asdas
+            </div>
+            <div className='w-1/4 h-1/2 bg-white text-black flex-shrink-0'>
+asdas
+            </div> */}
         </div>
+        
       </div>
     </div>
   )
