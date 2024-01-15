@@ -38,7 +38,7 @@ function auth() {
                 redirect: false,
                 callbackUrl: '/'
             })
-            router.push('/');
+            router.push('/profile');
         } catch (error) {
             console.log(error);
 
@@ -69,7 +69,8 @@ function auth() {
                             {screen === 'login' ? "Login" : "Register"}
                         </button>
                         <div className="flex flex-row items-center gap-4 mt-8 justify-center">
-                            <div onClick={() => signIn('google', { callbackUrl: '/' })} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
+                            <div onClick={() => {signIn('google', { callbackUrl: '/' })
+                        router.push('/profile')}} className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition">
                                 <GoogleIcon />
                             </div>
                         </div>

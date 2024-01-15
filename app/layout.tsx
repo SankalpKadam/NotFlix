@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import {Providers} from '@/components/SessionProvider';
+import SessionProvider from '@/components/SessionProvider';
 import { getServerSession } from 'next-auth'
 import { authOptions } from './api/auth/[...nextauth]/route';
 
@@ -23,10 +23,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
+        <SessionProvider session={session}>
 
         {children}
-        </Providers>
+        </SessionProvider>
         </body>
     </html>
   )
