@@ -52,11 +52,11 @@ npx next dev
 ### Technologies Used
 
 + Fully responsive and real time updating frontend is developed using the client and server side rendering capacities of **NextJS**. Utilized **TailwindCSS** for styling all the components.
-+ Alongside, **Typescript** is used to maintain code structure for the files including but not limited to __custom api endpoints__, __custom hooks__, __fetching data from servers__ , __client components__ etc.
++ Alongside, **Typescript** is used to maintain code structure for the files including but not limited to _custom api endpoints_, _custom hooks_, _fetching data from servers_ , _client components_ etc.
 + Futhermore, I integrated **MongoDB** to maintain list of users and their favorite movies. 
 + Incorporated, third party apis such as the **TMDB** to get list of movies and shows of various categories which are then rendered onto the UI.
 + Implemented, route protection using **NEXT AUTH** which prevents routes from being accessible if the user is not signed in.
 + Used **axios** to make requests and fetch data from the servers.
 
 ### Acknowledgements
-__Antonio(youtuber)__
+_Antonio(youtuber)_
