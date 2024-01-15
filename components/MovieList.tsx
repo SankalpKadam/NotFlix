@@ -19,12 +19,12 @@ function scroll(ref:HTMLDivElement) {
          return null;
      }
   return (
-    <div className='px-4 md:px-12 mt-4 space-y-8  overflow-x-scroll no-scrollbar'>
+    <div className='px-4 md:px-12 mt-4 space-y-8 '>
       <div>
         <p className='text-white text-md md:text-xl lg:text-2xl font-semibold'>
             {title}
         </p>
-        <div className='flex flex-row flex-nowrap' id={title} ref={ref}>
+        <div className='flex flex-row flex-nowrap  overflow-x-scroll no-scrollbar' id={title} ref={ref}>
             {
                 data.map((movie)=>(
                     <MovieCard key={movie.id} data={movie}/>

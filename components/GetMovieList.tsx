@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import MovieList from './MovieList';
 interface GetMovieListProps {
     type: string,
@@ -7,7 +7,7 @@ interface GetMovieListProps {
 }
 const GetMovieList: React.FC<GetMovieListProps> = ({ type, title }) => {
     const [trendingMovieList, setMovieList] = useState([]);
-    async function fetchTrending() {
+    const fetchTrending = useCallback(async ()=>{
         await axios.get(`/api/movies/${type}`).then((res) => {
             console.log(type, res.data);
 
@@ -15,10 +15,10 @@ const GetMovieList: React.FC<GetMovieListProps> = ({ type, title }) => {
                 res.data
             )
         })
-    }
+    },[type])
     useEffect(() => {
         fetchTrending();
-    }, [])
+    }, [fetchTrending])
     return (
         <MovieList title={title} data={trendingMovieList} />
     )
