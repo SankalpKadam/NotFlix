@@ -1,5 +1,5 @@
 # NotFlix
-
+![Home Screen](https://github.com/SankalpKadam/notflix/blob/master/public/images/GUI_1.png)
 ### Overview
 The front-end project is built using Next.js and TypeScript, aiming to replicate the user interface of the original Netflix website. This clone provides users with a fully responsive UI, closely resembling the design and functionality of Netflix. Leveraging Next.js for seamless navigation and TypeScript for enhanced code structure, the project delivers an immersive experience, allowing users to explore and interact with the content in a manner reminiscent of the popular streaming platform.
 
