@@ -2,11 +2,16 @@ import { useCallback, useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
 import NavbarItem from "./NavbarItem";
 import AccountMenu from "./AccountMenu";
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import SearchIcon from '@mui/icons-material/Search';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+import { useRouter } from "next/navigation";
 const TOP_OFFSET = 66;
 
 const Navbar = () => {
 
-    //
+    const router = useRouter();
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [showAccountMenu, setShowAccountMenu] = useState(false);
     const [showBackground, setShowBackground] = useState(false);
@@ -51,18 +56,17 @@ const Navbar = () => {
                 </div>
                 <div className="flex flex-row ml-auto gap-7 items-center">
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
-                        Search
-                        {/* insert icon */}
+                        <SearchIcon/>
                     </div>
                     <div className="text-gray-200 hover:text-gray-300 cursor-pointer">
-                        Bell
-                        {/* insert icon */}
+                        <NotificationsIcon/>
                     </div>
                     <div className="flex flex-row items-center gap-2 cursor-pointer relative" onClick={showAccount}>
                         <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden" >
                             <img src="/images/default-blue.png" alt="" />
                         </div>
                         {/* insert chevron down and icon*/}
+                        <ExpandMoreIcon className="text-white"/>
                         <AccountMenu visible={showAccountMenu}/>
                     </div>
                 </div>

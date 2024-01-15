@@ -75,6 +75,7 @@ function auth() {
                             </div>
                         </div>
                         <p className="text-neutral-500 mt-12">{screen === 'login' ? "Is this your first time using Netflix?" : "Already have an account?"} <span onClick={changeScreen} className="text-white ml-1 hover:underline cursor-pointer"> {screen === 'login' ? "Create an account" : " Login"}</span></p>
+                        <p className="text-neutral-500 mt-12">Demo account - email - demo123@gmail.com , password- demo@1234</p>
                     </div>
                 </div>
             </div>
